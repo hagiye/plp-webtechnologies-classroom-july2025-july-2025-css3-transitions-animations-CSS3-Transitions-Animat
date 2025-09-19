@@ -1,1 +1,175 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7 Assignment - CSS & JavaScript Animations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Week 7 Assignment: CSS & JavaScript Animations</h1>
+            <p>Bringing Web Pages to Life with CSS Transitions, Animations, and JavaScript Functions</p>
+        </header>
+        
+        <!-- Part 1: CSS3 Transitions and Animations -->
+        <section class="section">
+            <h2>Part 1: CSS3 Transitions and Animations</h2>
+            <p>This section demonstrates CSS transitions and keyframe animations without JavaScript.</p>
+            
+            <h3>Hover Transitions</h3>
+            <div class="animation-demo">
+                <div class="box transition-box">Hover Me</div>
+                <button class="btn">Hover Button</button>
+            </div>
+            
+            <h3>Keyframe Animations</h3>
+            <div class="animation-demo">
+                <div class="box keyframe-box">Pulse</div>
+                <div class="box spin-box">Spin</div>
+                <div class="box slide-in">Slide In</div>
+            </div>
+            
+            <div class="code-display">
+                <pre><span class="code-comment">/* CSS code for keyframe animations */</span>
+<span class="code-keyword">@keyframes</span> pulse {
+  0% { <span class="code-function">transform</span>: <span class="code-function">scale</span>(1); }
+  50% { <span class="code-function">transform</span>: <span class="code-function">scale</span>(1.05); }
+  100% { <span class="code-function">transform</span>: <span class="code-function">scale</span>(1); }
+}
+
+<span class="code-keyword">@keyframes</span> spin {
+  <span class="code-keyword">from</span> { <span class="code-function">transform</span>: <span class="code-function">rotate</span>(0deg); }
+  <span class="code-keyword">to</span> { <span class="code-function">transform</span>: <span class="code-function">rotate</span>(360deg); }
+}
+
+<span class="code-keyword">@keyframes</span> slideIn {
+  <span class="code-keyword">from</span> { 
+    <span class="code-function">transform</span>: <span class="code-function">translateX</span>(-100%); 
+    <span class="code-function">opacity</span>: 0; 
+  }
+  <span class="code-keyword">to</span> { 
+    <span class="code-function">transform</span>: <span class="code-function">translateX</span>(0); 
+    <span class="code-function">opacity</span>: 1; 
+  }
+}</pre>
+            </div>
+        </section>
+        
+        <!-- Part 2: JavaScript Functions -->
+        <section class="section">
+            <h2>Part 2: JavaScript Functions — Scope, Parameters & Return Values</h2>
+            <p>This section demonstrates JavaScript functions with parameters, return values, and scope awareness.</p>
+            
+            <div class="interactive-demo">
+                <div class="controls">
+                    <input type="number" id="num1" placeholder="Enter number" value="5">
+                    <input type="number" id="num2" placeholder="Enter number" value="3">
+                    <button class="btn" id="calculate-btn">Calculate</button>
+                </div>
+                
+                <div id="calculation-result" style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px; min-height: 100px;">
+                    Results will appear here
+                </div>
+            </div>
+            
+            <div class="code-display">
+                <pre><span class="code-comment">// JavaScript demonstrating scope, parameters, and return values</span>
+<span class="code-keyword">const</span> <span class="code-var">globalVar</span> = <span class="code-string">"I'm global"</span>; <span class="code-comment">// Global variable</span>
+
+<span class="code-comment">// Function with parameters and return value</span>
+<span class="code-keyword">function</span> <span class="code-function">multiply</span>(a, b) {
+  <span class="code-keyword">const</span> <span class="code-var">localVar</span> = <span class="code-string">"I'm local"</span>; <span class="code-comment">// Local variable</span>
+  <span class="code-keyword">return</span> a * b;
+}
+
+<span class="code-comment">// Function demonstrating closure</span>
+<span class="code-keyword">function</span> <span class="code-function">createCounter</span>() {
+  <span class="code-keyword">let</span> <span class="code-var">count</span> = 0; <span class="code-comment">// This variable is enclosed</span>
+  <span class="code-keyword">return</span> <span class="code-keyword">function</span>() {
+    <span class="code-var">count</span>++;
+    <span class="code-keyword">return</span> <span class="code-var">count</span>;
+  };
+}</pre>
+            </div>
+        </section>
+        
+        <!-- Part 3: Combining CSS Animations with JavaScript -->
+        <section class="section">
+            <h2>Part 3: Combining CSS Animations with JavaScript</h2>
+            <p>This section demonstrates how JavaScript can be used to trigger CSS animations dynamically.</p>
+            
+            <div class="interactive-demo">
+                <h3>Card Flip Animation</h3>
+                <div class="card" id="flip-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Front</h3>
+                            <p>Click to flip</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Back</h3>
+                            <p>JavaScript triggered this flip</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn" id="flip-card-btn">Flip Card</button>
+            </div>
+            
+            <div class="interactive-demo">
+                <h3>Animation Controls</h3>
+                <div class="animation-controls">
+                    <button class="btn" id="start-animation1-btn">Start Animation 1</button>
+                    <button class="btn" id="start-animation2-btn">Start Animation 2</button>
+                    <button class="btn" id="stop-animations-btn">Stop All Animations</button>
+                    <button class="btn" id="show-modal-btn">Show Modal</button>
+                </div>
+                
+                <div class="animation-demo">
+                    <div id="box1" class="box" style="background: #3498db;">Box 1</div>
+                    <div id="box2" class="box" style="background: #9b59b6;">Box 2</div>
+                </div>
+            </div>
+            
+            <div class="code-display">
+                <pre><span class="code-comment">// JavaScript to trigger CSS animations</span>
+<span class="code-keyword">function</span> <span class="code-function">flipCard</span>() {
+  <span class="code-keyword">const</span> <span class="code-var">card</span> = <span class="code-function">document</span>.<span class="code-function">getElementById</span>(<span class="code-string">'flip-card'</span>);
+  <span class="code-var">card</span>.<span class="code-function">classList</span>.<span class="code-function">toggle</span>(<span class="code-string">'flipped'</span>);
+}
+
+<span class="code-keyword">function</span> <span class="code-function">startAnimation</span>(boxId) {
+  <span class="code-keyword">const</span> <span class="code-var">box</span> = <span class="code-function">document</span>.<span class="code-function">getElementById</span>(boxId);
+  <span class="code-var">box</span>.<span class="code-function">style</span>.<span class="code-var">animation</span> = <span class="code-string">'pulse 2s infinite'</span>;
+}
+
+<span class="code-keyword">function</span> <span class="code-function">stopAllAnimations</span>() {
+  <span class="code-keyword">const</span> <span class="code-var">boxes</span> = <span class="code-function">document</span>.<span class="code-function">querySelectorAll</span>(<span class="code-string">'.box'</span>);
+  <span class="code-var">boxes</span>.<span class="code-function">forEach</span>(<span class="code-var">box</span> => {
+    <span class="code-var">box</span>.<span class="code-function">style</span>.<span class="code-var">animation</span> = <span class="code-string">'none'</span>;
+  });
+}</pre>
+            </div>
+        </section>
+        
+        <!-- Modal -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <button class="close-modal" id="close-modal-btn">&times;</button>
+                <h2>Modal Popup</h2>
+                <p>This modal was triggered with JavaScript and uses CSS for the animation.</p>
+                <p>Click the X button or anywhere outside to close.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Week 7 Assignment - CSS & JavaScript Animations</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
